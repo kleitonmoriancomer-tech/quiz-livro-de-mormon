@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Livro de Mórmon - Desafio da Fé</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <header>
+            <h1>🛡️ Desafio da Fé: Livro de Mórmon</h1>
+        </header>
+
+        <main id="quiz">
+            <h2 id="question">Pergunta 1/20: [Onde a pergunta será exibida?]</h2>
+            
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+
+            <div id="controls">
+                <button id="next-btn" class="next-btn hide">Próxima Pergunta</button>
+            </div>
+        </main>
+
+        <div id="result-screen" class="hide">
+            <h2>🎉 Fim do Desafio!</h2>
+            <p>Sua Pontuação Final: <span id="score-display">0</span> de 20</p>
+            <button id="restart-btn" class="restart-btn">Tentar Novamente</button>
+        </div>
+    </div>
+    
+    <audio id="background-music" loop>
+        <source src="audio/background.mp3" type="audio/mp3">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <audio id="sound-correct">
+        <source src="audio/acerto.wav" type="audio/wav">
+    </audio>
+    
+    <audio id="sound-wrong">
+        <source src="audio/erro.wav" type="audio/wav">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
