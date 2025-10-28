@@ -1,0 +1,147 @@
+/* Importação da fonte (se usada no HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #0077b6; /* Azul atraente (similar ao céu) */
+    --secondary-color: #ade8f4; /* Azul mais claro */
+    --correct-color: #4CAF50; /* Verde para acerto */
+    --wrong-color: #f44336; /* Vermelho para erro */
+    --text-color: #333;
+    --bg-color: #f0f8ff; /* Fundo leve */
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.quiz-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+#question {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.btn-grid {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Estilos de Acerto e Erro (Animação e Feedback) */
+.btn.correct {
+    background-color: var(--correct-color);
+    color: white;
+    border-color: var(--correct-color);
+    animation: pulse-correct 0.5s ease;
+}
+
+.btn.wrong {
+    background-color: var(--wrong-color);
+    color: white;
+    border-color: var(--wrong-color);
+    animation: shake 0.5s ease;
+}
+
+@keyframes pulse-correct {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* Botão de Próxima Pergunta e Reiniciar */
+.next-btn, .restart-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover, .restart-btn:hover {
+    background-color: #005f99;
+}
+
+/* Utilitário para esconder elementos */
+.hide {
+    display: none;
+}
+
+/* Estilo da tela de resultado */
+#result-screen {
+    padding: 40px 0;
+}
+
+#result-screen h2 {
+    color: var(--correct-color);
+    margin-bottom: 15px;
+}
+
+#score-display {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
